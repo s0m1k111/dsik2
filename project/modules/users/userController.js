@@ -41,8 +41,35 @@ async function getUserById(req, res) {
   }
 }
 
+async function searchUsers(req, res) {
+  try {
+    const query = (req.query.query || "").toLowerCase();
+    const currentUserId = req.user.id;
+
+    if (!query.trim()) {
+      return res.json({ results: [] });
+    }
+
+    const users = await userService.getAllUsers();
+
+    const results = users
+      .filter((u) => u.id !== currentUserId && (u.username.toLowerCase().includes(query) || u.email.toLowerCase().includes(query)))
+      .map((u) => ({
+        id: u.id,
+        username: u.username,
+        email: u.email,
+        avatar: u.avatar,
+      }));
+
+    res.json({ results });
+  } catch (err) {
+    res.status(500).json({ error: "Ошибка поиска пользователей" });
+  }
+}
+
 module.exports = {
   getProfile,
   updateProfile,
   getUserById,
+  searchUsers,
 };

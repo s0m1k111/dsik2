@@ -31,9 +31,14 @@ async function updateUser(id, updates) {
   return users[index];
 }
 
+async function getAllUsers() {
+  return await loadUsers();
+}
+
 module.exports = {
   loadUsers,
   saveUsers,
   getUserById,
   updateUser,
+  getAllUsers,
 };
