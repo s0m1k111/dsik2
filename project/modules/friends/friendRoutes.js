@@ -13,4 +13,6 @@ router.get("/list", authCheck, friendController.getFriends);
 router.get("/incoming", authCheck, friendController.getIncoming);
 router.get("/outgoing", authCheck, friendController.getOutgoing);
 
+router.get("/status/:id", authCheck, friendController.getStatus);
+
 module.exports = router;

@@ -7,7 +7,9 @@
     "avatar": null,
     "createdAt": 1773966243671,
     "friends": [],
-    "incomingRequests": [],
+    "incomingRequests": [
+      "u_1ff36bb3"
+    ],
     "outgoingRequests": []
   },
   {
@@ -19,6 +21,8 @@
     "createdAt": 1773967113880,
     "friends": [],
     "incomingRequests": [],
-    "outgoingRequests": []
+    "outgoingRequests": [
+      "u_d51472e2"
+    ]
   }
 ]

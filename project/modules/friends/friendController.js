@@ -47,6 +47,14 @@ async function getOutgoing(req, res) {
   res.json({ outgoingRequests: user.outgoingRequests || [] });
 }
 
+async function getStatus(req, res) {
+  const userId = req.user.id;
+  const targetId = req.params.id;
+
+  const result = await friendService.getRelationshipStatus(userId, targetId);
+  res.json(result);
+}
+
 module.exports = {
   sendRequest,
   acceptRequest,
@@ -55,4 +63,5 @@ module.exports = {
   getFriends,
   getIncoming,
   getOutgoing,
+  getStatus,
 };
