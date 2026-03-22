@@ -1,4 +1,5 @@
 const userService = require("./userService");
+const friendService = require("../friends/friendService");
 
 async function getProfile(req, res) {
   try {
@@ -28,14 +29,27 @@ async function updateProfile(req, res) {
 
 async function getUserById(req, res) {
   try {
-    const { id } = req.params;
-    const user = await userService.getUserById(id);
+    const targetId = req.params.id;
+    const currentUserId = req.user.id;
+
+    const user = await userService.getUserById(targetId);
 
     if (!user) {
       return res.status(404).json({ error: "Пользователь не найден" });
     }
 
-    res.json({ user });
+    // Получаем статус отношений
+    const relationship = await friendService.getRelationshipStatus(currentUserId, targetId);
+
+    res.json({
+      user: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        avatar: user.avatar || null,
+      },
+      relationship,
+    });
   } catch (err) {
     res.status(500).json({ error: "Ошибка получения пользователя" });
   }

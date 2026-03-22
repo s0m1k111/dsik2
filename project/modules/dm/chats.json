@@ -1,0 +1,26 @@
+[
+  {
+    "id": "chat_amo00mw4",
+    "members": ["u_d51472e2", "u_1ff36bb3"],
+    "messages": [
+      {
+        "id": "msg_11k64xok",
+        "senderId": "u_d51472e2",
+        "text": "Привет, это тестовое сообщение!",
+        "timestamp": 1774217611664
+      },
+      {
+        "id": "msg_6dr3pngy",
+        "senderId": "u_d51472e2",
+        "text": "Сообщение 1",
+        "timestamp": 1774217830861
+      },
+      {
+        "id": "msg_rumwrlco",
+        "senderId": "u_d51472e2",
+        "text": "Сообщение 2",
+        "timestamp": 1774217837690
+      }
+    ]
+  }
+]

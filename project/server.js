@@ -5,6 +5,7 @@ const path = require("path");
 const authRoutes = require("./modules/auth/authRoutes");
 const userRoutes = require("./modules/users/userRoutes");
 const friendRoutes = require("./modules/friends/friendRoutes");
+const dmRoutes = require("./modules/dm/dmRoutes"); // ← добавили
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,7 @@ app.use(express.json({ limit: "10mb" })); // поддержка JSON + base64
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/friends", friendRoutes);
+app.use("/dm", dmRoutes); // ← добавили
 
 // Test route
 app.get("/", (req, res) => {
