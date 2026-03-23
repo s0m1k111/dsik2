@@ -24,5 +24,13 @@
     "outgoingRequests": [
       "u_d51472e2"
     ]
+  },
+  {
+    "id": "u_35b8d8e3",
+    "email": "testik@gmail.com",
+    "username": "testik",
+    "password": "$2b$10$ctv/HkwS0nDRKiieUcHEUOGVaqQOqGzkXnrq67Q65SoYTQDDNae32",
+    "avatar": null,
+    "createdAt": 1774286524806
   }
 ]
